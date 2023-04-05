@@ -3,9 +3,8 @@ import config from 'config';
 
 async function connect() {
 	const dbUri = config.get<string>("dbUri");
-
 	try {
-		await mongoose.connect(dbUri)		
+		await mongoose.connect(dbUri, { dbName: 'BudgetApp'});		
 		console.log("Connected to Mongo!");
 	}
 	catch {
